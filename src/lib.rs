@@ -1,5 +1,9 @@
+//! Derive a silly animal name from a 32 byte hash or key
+//!
+
 include!(concat!(env!("OUT_DIR"), "/words.rs"));
 
+/// Given a 32 byte buffer, return an animal name
 pub fn key_to_name(input: &[u8; 32]) -> String {
     let mut buf = [0u8; 8];
 
