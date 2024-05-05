@@ -1,6 +1,6 @@
 [package]
 name = "key-to-animal"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
 description = "Derive a silly animal name from a 32 byte hash or key"
 authors = ["peg <peg@magmacollective.org>"]
