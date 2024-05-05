@@ -3,5 +3,9 @@ name = "key-to-animal"
 version = "0.1.0"
 edition = "2021"
 description = "Derive a silly animal name from a 32 byte hash or key"
+authors = ["peg <peg@magmacollective.org>"]
+license = "GPL-3.0-or-later"
+homepage = "https://gitlab.com/pegpeg/key-to-animal"
+repository = "https://gitlab.com/pegpeg/key-to-animal"
 
 [dependencies]
