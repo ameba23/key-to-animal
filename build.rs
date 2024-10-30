@@ -10,14 +10,16 @@ fn write_words(name: &str, writer: &mut BufWriter<File>, length: usize) {
     let reader = BufReader::new(file);
 
     writer
-        .write(format!("const {}: [&str; {}] = [", name.to_uppercase(), length).as_bytes())
+        .write_all(format!("const {}: [&str; {}] = [", name.to_uppercase(), length).as_bytes())
         .unwrap();
 
-    for (_index, line) in reader.lines().enumerate() {
+    for line in reader.lines() {
         let line = line.unwrap(); // Ignore errors.
-        writer.write(format!("\"{}\",", line).as_bytes()).unwrap();
+        writer
+            .write_all(format!("\"{}\",", line).as_bytes())
+            .unwrap();
     }
-    writer.write("];".as_bytes()).unwrap();
+    writer.write_all("];".as_bytes()).unwrap();
 }
 
 fn main() {
