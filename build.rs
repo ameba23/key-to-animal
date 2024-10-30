@@ -1,9 +1,9 @@
-use std::env;
-use std::fs::File;
-use std::io::BufWriter;
-use std::io::Write;
-use std::io::{BufRead, BufReader};
-use std::path::Path;
+use std::{
+    env,
+    fs::File,
+    io::{BufRead, BufReader, BufWriter, Write},
+    path::Path,
+};
 
 fn write_words(name: &str, writer: &mut BufWriter<File>, length: usize) {
     let file = File::open(format!("words/{name}.txt")).unwrap();
